@@ -15,7 +15,7 @@ let rmgBtnEle = document.querySelector('button');
 let getMealData = () => {
     let apiUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
     
-    fetch(api)
+    fetch(apiUrl)
     .then(response => response.json())
     .then(meal => {
         // console.log(meal.meals[0])
@@ -27,7 +27,7 @@ let getMealData = () => {
 // let getDrinkData = () => {
 //     let apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
     
-//     fetch(api)
+//     fetch(apiUrl)
 //     .then(response => response.json())
 //     .then(drink => {
 //         // console.log(drink.meals[0])

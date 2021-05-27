@@ -12,28 +12,26 @@
     <header>
         <h1>Random Meal Generator</h1>
         <h2>Press the button and instantly get a random dish to cook and cocktail to mix!</h2>
-        <button class="button is-outlined">RMG!</button>
+        <button class="button is-outlined is-warning is-light">RMG!</button>
     </header>
     
-    <main>
-        <div class="columns is-desktop">
-            <div class="column meal-container">
+    <main class="columns is-desktop">
+            <section class="column meal-container">
                 <h3 class="meal-name"></h3>
-                <img class="meal-img" src="" alt=""/>
+                <a class="meal-link" href=""><img class="meal-img" src="" alt=""/></a>
                 <ul class="meal-ingredients">
 
                 </ul>
                 <p class="meal-instructions"></p>
-            </div>
-            <div class="column drink-container">
+            </section>
+            <section class="column drink-container">
                 <h3 class="drink-name"></h3>
-                <img class="drink-img" src="" alt=""/>
+                <a class="drink-link" href=""><img class="drink-img" src="" alt=""/></a>
                 <ul class="drink-ingredients">
 
                 </ul>
                 <p class="drink-instructions"></p>
-            </div>
-          </div>    
+            </section>
     </main>
 
     <script src="./assets/js/script.js"></script>

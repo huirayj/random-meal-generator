@@ -1,3 +1,6 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 :root{
 --burnt-sienna: #e76f51ff;
@@ -10,25 +13,20 @@
 
 header{
     text-align: center;
-    margin: 16px;
-    font-size:24px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: inline-block;
+    margin: 16px;  
 }
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
 .column {
-    background-color: aquamarine;
+    background-color: #BDE0FE;
     margin: 4px;
-    display:flex;
-    margin-bottom: ;
-    margin-top: ;
     padding: 0;   
-}
-
-.button {
-    
-
-}
-
-.img{
-
 }

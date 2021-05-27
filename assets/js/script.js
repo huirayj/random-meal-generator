@@ -1,10 +1,10 @@
 let rmgBtnEle = document.querySelector('button');
 
-// let mealTitleEle = document.querySelector('');
-// let mealImgEle = document.querySelector('');
-// let mealInstrucEle = document.querySelector('');
-// let mealUlEle = document.querySelector('');
-// let mealIngredEle = document.querySelector('');
+let mealTitleEle = document.querySelector('.meal-name');
+let mealLinkEle = document.querySelector('.meal-link');
+let mealImgEle = document.querySelector('.meal-img');
+let mealInstrucEle = document.querySelector('.meal-instructions');
+let mealUlEle = document.querySelector('.meal-ingredients');
 
 // let drinkTitleEle = document.querySelector('');
 // let drinkImgEle = document.querySelector('');
@@ -49,16 +49,17 @@ let displayMealRecipe = (meal) => {
             ingreds.push(`${ingred}: ${meas}`.replace(/\s+/g, " "));
         }
     }
-
-    // ingreds.map(item => {
-    //     let liEle = document.createElement('li');
-    //     liEle.textContent = item;
-    //     mealUlEle.appendChild(liEle);
-    // });
-    // mealTitleEle.textContent = meal.strMeal;
-    // mealImgEle.setAttribute('src', mealImg);
-    // mealInstrucEle.textContent = meal.strInstructions;
+    mealUlEle.innerHTML = '';
+    ingreds.map(item => {
+        let liEle = document.createElement('li');
+        mealUlEle.appendChild(liEle);
+        liEle.textContent = item;
+    });
+    mealTitleEle.textContent = meal.strMeal;
+    mealImgEle.setAttribute('src', mealImg);
+    mealInstrucEle.textContent = meal.strInstructions;
 
 }
 
 rmgBtnEle.addEventListener('click', getMealData);
+// rmgBtnEle.addEventListener('click', getMealData);

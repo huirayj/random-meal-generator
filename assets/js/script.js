@@ -1,7 +1,6 @@
 let rmgBtnEle = document.querySelector('button');
 
 let mealTitleEle = document.querySelector('.meal-name');
-<<<<<<< HEAD
 let mealImgEle = document.querySelector('.meal-img');
 let mealInstrucEle = document.querySelector('.meal-instructions');
 let mealUlEle = document.querySelector('.meal-ingredients');
@@ -14,20 +13,6 @@ let mealLinkEle = document.querySelector('.meal-link');
  let drinkLinkEle = document.querySelector('.drink-link');
 
 const getMealData = () => {
-=======
-let mealLinkEle = document.querySelector('.meal-link');
-let mealImgEle = document.querySelector('.meal-img');
-let mealInstrucEle = document.querySelector('.meal-instructions');
-let mealUlEle = document.querySelector('.meal-ingredients');
-
-// let drinkTitleEle = document.querySelector('');
-// let drinkImgEle = document.querySelector('');
-// let drinkInstrucEle = document.querySelector('');
-// let drinklUlEle = document.querySelector('');
-// let drinkIngredEle = document.querySelector('');
-
-let getMealData = () => {
->>>>>>> main
     let apiUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
     fetch(apiUrl)
@@ -53,13 +38,6 @@ const displayMealRecipe = (meal) => {
             ingreds.push(`${ingred}: ${meas}`.replace(/\s+/g, " "));
         }
     }
-<<<<<<< HEAD
-
-}
-
-const getDrinkData = () => {
-    let apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
-=======
     mealUlEle.innerHTML = '';
     ingreds.map(item => {
         let liEle = document.createElement('li');
@@ -69,7 +47,6 @@ const getDrinkData = () => {
     mealTitleEle.textContent = meal.strMeal;
     mealImgEle.setAttribute('src', mealImg);
     mealInstrucEle.textContent = meal.strInstructions;
->>>>>>> main
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -80,7 +57,6 @@ const getDrinkData = () => {
         })
 }
 
-<<<<<<< HEAD
 const displayDrinkRecipe = (drink) => {
     let drinkImg= drink.strDrinkThumb;
     let ingreds=[];
@@ -111,7 +87,3 @@ const displayDrinkRecipe = (drink) => {
 }
 rmgBtnEle.addEventListener('click', getMealData);
 rmgBtnEle.addEventListener('click', getDrinkData);
-=======
-rmgBtnEle.addEventListener('click', getMealData);
-// rmgBtnEle.addEventListener('click', getMealData);
->>>>>>> main

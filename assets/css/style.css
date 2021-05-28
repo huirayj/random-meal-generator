@@ -31,10 +31,10 @@ h3 {
     font-size: 24px;
 }
 
-.column {
+.columns {
     background-color: #CBF3F0;
     margin: 8px;
     padding: 16px;
-    min-height: 750px;
+    min-height: 325px;
     border: solid #2EC4B6;
 }

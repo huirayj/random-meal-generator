@@ -62,6 +62,10 @@ h3 {
     border: solid #2EC4B6;
 }
 
+.columns:hover {
+    background-color: rgba(203, 243, 240, 0.9);
+}
+
 .hidden {
     display: none;
 }

@@ -2,31 +2,13 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-:root{
---burnt-sienna: #e76f51ff;
---orange-yellow-crayola: #e9c46aff;
---charcoal: #264653ff;
---persian-green: rgb(155, 157, 42);
---sandy-brown: #f4a261ff;
-}
-
-
 header{
     text-align: center;
-    margin: 16px;  
-    /* background-color: #FFBF69; */
+    margin: 16px; 
 }
 
 html {
     background-image: url("https://images.pexels.com/photos/4113891/pexels-photo-4113891.jpeg?cs=srgb&dl=pexels-alleksana-4113891.jpg&fm=jpg:");
-}
-
-.save-button {
-    display: inline-block;
-    text-align: left;
-    align-items: left;
-    margin-right: 32px;
-    
 }
 
 .saved-items {
@@ -40,12 +22,14 @@ html {
 h1 {
     font-size: 48px;
     color: white;
+    text-shadow: 0px 0px 10px black;
 }
 
 h2 {
     font-size: 16px;
     margin-bottom: 8px;
     color: white;
+    text-shadow: 0px 0px 10px black;
 }
 
 h3 {
@@ -53,6 +37,7 @@ h3 {
     font-size: 24px;
     margin-top: 16px;
     color: white;
+    text-shadow: 0px 0px 10px black;
 }
 
 .columns {

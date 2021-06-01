@@ -1,5 +1,7 @@
 const rmgBtnEle = document.querySelector('.rmg-button');
-const sectionsEle = document.querySelectorAll('section');
+const mainEle = document.querySelector('main');
+const headerEle = document.querySelector('header');
+const h2Ele = document.querySelector('h2');
 
 const mealTitleEle = document.querySelector('.meal-name');
 const mealLinkEle = document.querySelector('.meal-link');
@@ -19,7 +21,9 @@ const clearBtnEle = document.querySelector('.clear-button');
 const mealList = JSON.parse(localStorage.getItem('mealList')) || [];
 
 const init = () => {
-    sectionsEle.forEach(item => item.classList.remove('hidden'));
+    headerEle.classList.remove('start-position');
+    mainEle.classList.remove('hidden');
+    h2Ele.classList.add('hidden');
     getMealData();
     getDrinkData();
 }
@@ -115,7 +119,7 @@ const showMealList = () => {
     savUlEle.innerHTML = '';
     if (mealList.length > 0) {
         mealList.forEach(({ meal, drink }) =>
-            str += `<li class='saved-items'>${meal} & ${drink}</li>`);
+            str += `<li class='saved-items'>${meal} + ${drink}</li>`);
         savUlEle.innerHTML = str;
     }
 }
@@ -134,7 +138,7 @@ const saveHandler = (e) => {
         const newSavLiEle = document.createElement('li');
 
         savUlEle.appendChild(newSavLiEle);
-        newSavLiEle.textContent = `${pair.meal} & ${pair.drink}`;
+        newSavLiEle.textContent = `${pair.meal} + ${pair.drink}`;
         console.log(savUlEle.children);
         Array.from(savUlEle.children).forEach(item => item.classList.add('saved-items'));
         localStorage.setItem('mealList', JSON.stringify(mealList));
@@ -146,15 +150,18 @@ const clearSavedItem = () => {
     localStorage.clear();
 };
 
-window.onload = () => showMealList();
+window.onload = () => {
+    h2Ele.classList.remove('hidden');
+    showMealList();
+};
 rmgBtnEle.addEventListener('click', init);
 saveBtnEle.addEventListener('click', saveHandler);
 clearBtnEle.addEventListener('click', clearSavedItem);
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('saved-items')) {
         let mealName = e.target.textContent;
-        let meal = mealName.split('&')[0].trim();
-        let drink = mealName.split('&')[1].trim();
+        let meal = mealName.split('+')[0].trim();
+        let drink = mealName.split('+')[1].trim();
 
         getMealSearchData(meal);
         getDrinkSearchData(drink);

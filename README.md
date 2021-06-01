@@ -57,5 +57,5 @@ We wanted to thank you one more time for taking your time to look through everyt
 ![Start of the site](./assets/images/screenshots/screenshot-desktop-start.jpg)
 ### Site content
 ![Site content](./assets/images/screenshots/screenshot-desktop-content.jpg)
-### Site content
+### Favorite list
 ![Favorite list](./assets/images/screenshots/screenshot-desktop-favorites.jpg)

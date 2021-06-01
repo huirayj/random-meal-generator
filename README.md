@@ -51,3 +51,11 @@ The team learned a lot while working on this webpage. We learned about communica
 We wanted to thank you one more time for taking your time to look through everything, we greatly appreciate it.
 
 - Aaron, Livak, Justin
+
+## Screenshots
+### Start of the site
+![Start of the site](./assets/images/screenshots/screenshot-desktop-start.jpg)
+### Site content
+![Site content](./assets/images/screenshots/screenshot-desktop-content.jpg)
+### Site content
+![Favorite list](./assets/images/screenshots/screenshot-desktop-favorites.jpg)

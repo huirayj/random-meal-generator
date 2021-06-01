@@ -1,5 +1,12 @@
-*{
+* {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+html {
+    background-image: url('../images/pexels-alleksana-4113891.jpg');
+    background-position: center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed;
 }
 
 header{
@@ -7,17 +14,13 @@ header{
     margin: 16px; 
 }
 
-html {
-    background-image: url("https://images.pexels.com/photos/4113891/pexels-photo-4113891.jpeg?cs=srgb&dl=pexels-alleksana-4113891.jpg&fm=jpg:");
+header.start-position {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
-
-.saved-items {
-    border: solid  #2EC4B6;
-    display: inline-block;
-    padding: 4px;
-    background-color: white;
-}
-
 
 h1 {
     font-size: 48px;
@@ -40,10 +43,25 @@ h3 {
     text-shadow: 0px 0px 10px black;
 }
 
+.button-container {
+    display: inline;
+}
+
+.saved-items {
+    border: solid  #2EC4B6;
+    display: inline-block;
+    padding: 4px;
+    background-color: white;
+}
+
 .columns {
-    background-color: #CBF3F0;
+    background-color: rgba(203, 243, 240, 0.8);
     margin: 8px;
     padding: 16px;
     min-height: 325px;
     border: solid #2EC4B6;
+}
+
+.hidden {
+    display: none;
 }

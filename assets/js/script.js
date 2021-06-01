@@ -124,8 +124,7 @@ const showMealList = () => {
     }
 }
 
-const saveHandler = (e) => {
-    e.preventDefault;
+const saveHandler = () => {
     let pair = {
         meal: mealTitleEle.childNodes[0].nodeValue,
         drink: drinkTitleEle.childNodes[0].nodeValue
@@ -142,16 +141,19 @@ const saveHandler = (e) => {
         console.log(savUlEle.children);
         Array.from(savUlEle.children).forEach(item => item.classList.add('saved-items'));
         localStorage.setItem('mealList', JSON.stringify(mealList));
+        clearBtnEle.classList.remove('hidden');
     }
 }
 
 const clearSavedItem = () => {
     savUlEle.innerHTML = '';
+    clearBtnEle.classList.add('hidden');
     localStorage.clear();
 };
 
 window.onload = () => {
     h2Ele.classList.remove('hidden');
+    mealList.length && clearBtnEle.classList.remove('hidden');
     showMealList();
 };
 rmgBtnEle.addEventListener('click', init);

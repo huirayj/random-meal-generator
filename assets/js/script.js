@@ -167,5 +167,7 @@ document.addEventListener('click', (e) => {
 
         getMealSearchData(meal);
         getDrinkSearchData(drink);
+        headerEle.classList.remove('start-position');
+        mainEle.classList.remove('hidden');
     }
 });

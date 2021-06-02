@@ -18,7 +18,7 @@ const savUlEle = document.querySelector('.saved-list');
 const saveBtnEle = document.querySelector('.save-button');
 const clearBtnEle = document.querySelector('.clear-button');
 
-const mealList = JSON.parse(localStorage.getItem('mealList')) || [];
+let mealList = JSON.parse(localStorage.getItem('mealList')) || [];
 
 const init = () => {
     headerEle.classList.remove('start-position');
@@ -138,7 +138,7 @@ const saveHandler = () => {
 
         savUlEle.appendChild(newSavLiEle);
         newSavLiEle.textContent = `${pair.meal} + ${pair.drink}`;
-        console.log(savUlEle.children);
+
         Array.from(savUlEle.children).forEach(item => item.classList.add('saved-items'));
         localStorage.setItem('mealList', JSON.stringify(mealList));
         clearBtnEle.classList.remove('hidden');
@@ -149,6 +149,7 @@ const clearSavedItem = () => {
     savUlEle.innerHTML = '';
     clearBtnEle.classList.add('hidden');
     localStorage.clear();
+    mealList = [];
 };
 
 window.onload = () => {

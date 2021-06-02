@@ -50,7 +50,7 @@ The team learned a lot while working on this webpage. We learned about communica
 
 We wanted to thank you one more time for taking your time to look through everything, we greatly appreciate it.
 
-- Aaron, Livak, Justin
+- [Aaron](https://github.com/aaron-might), [Livak](https://github.com/Sand-ito), [Justin](https://github.com/huirayj)
 
 ## Screenshots
 ### Start of the site

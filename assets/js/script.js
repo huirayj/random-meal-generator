@@ -18,11 +18,12 @@ const savUlEle = document.querySelector('.saved-list');
 const saveBtnEle = document.querySelector('.save-button');
 const clearBtnEle = document.querySelector('.clear-button');
 
-const mealList = JSON.parse(localStorage.getItem('mealList')) || [];
+let mealList = JSON.parse(localStorage.getItem('mealList')) || [];
 
 const init = () => {
     headerEle.classList.remove('start-position');
     mainEle.classList.remove('hidden');
+    saveBtnEle.classList.remove('hidden');
     h2Ele.classList.add('hidden');
     getMealData();
     getDrinkData();
@@ -47,7 +48,7 @@ const getDrinkData = () => {
 }
 
 const getMealSearchData = (meal) => {
-    const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`
+    const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`;
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -56,7 +57,7 @@ const getMealSearchData = (meal) => {
 }
 
 const getDrinkSearchData = (drink) => {
-    const apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
+    const apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`;
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -138,7 +139,7 @@ const saveHandler = () => {
 
         savUlEle.appendChild(newSavLiEle);
         newSavLiEle.textContent = `${pair.meal} + ${pair.drink}`;
-        console.log(savUlEle.children);
+
         Array.from(savUlEle.children).forEach(item => item.classList.add('saved-items'));
         localStorage.setItem('mealList', JSON.stringify(mealList));
         clearBtnEle.classList.remove('hidden');
@@ -149,6 +150,7 @@ const clearSavedItem = () => {
     savUlEle.innerHTML = '';
     clearBtnEle.classList.add('hidden');
     localStorage.clear();
+    mealList = [];
 };
 
 window.onload = () => {

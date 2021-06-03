@@ -3,15 +3,15 @@
 }
 
 html {
-    background-image: url('../images/pexels-alleksana-4113891.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/pexels-alleksana-4113891.jpg');
     background-position: center;
     background-repeat: no-repeat, no-repeat;
     background-attachment: fixed;
 }
 
-header{
+header {
     text-align: center;
-    margin: 16px; 
+    margin: 16px;
 }
 
 header.start-position {
@@ -25,14 +25,14 @@ header.start-position {
 h1 {
     font-size: 48px;
     color: white;
-    text-shadow: 0px 0px 10px black;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 h2 {
     font-size: 16px;
     margin-bottom: 8px;
     color: white;
-    text-shadow: 0px 0px 10px black;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 h3 {
@@ -40,7 +40,7 @@ h3 {
     font-size: 24px;
     margin-top: 16px;
     color: white;
-    text-shadow: 0px 0px 10px black;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .button-container {
@@ -48,10 +48,90 @@ h3 {
 }
 
 .saved-items {
-    border: solid  #2EC4B6;
+    border: solid #2EC4B6;
     display: inline-block;
-    padding: 4px;
+    padding: 3px;
+    margin: 1px;
     background-color: white;
+}
+
+.saved-items:hover {
+    font-size: 1.2em;
+}
+
+.columns {
+    background-color: rgba(203, 243, 240, 0.8);
+    margin: 8px;
+    padding: 16px;
+    min-height: 325px;
+    border: solid #2EC4B6;
+}
+
+.columns:hover {
+    background-color: rgba(203, 243, 240, 0.9);
+}
+
+.hidden {
+    display: none;
+}* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+html {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/pexels-alleksana-4113891.jpg');
+    background-position: center;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    text-align: center;
+    margin: 16px;
+}
+
+header.start-position {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 48px;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 16px;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.button-container {
+    display: inline;
+}
+
+.saved-items {
+    border: solid #2EC4B6;
+    display: inline-block;
+    padding: 3px;
+    margin: 1px;
+    background-color: white;
+}
+
+.saved-items:hover {
+    font-size: 1.2em;
 }
 
 .columns {

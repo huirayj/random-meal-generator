@@ -23,6 +23,7 @@ let mealList = JSON.parse(localStorage.getItem('mealList')) || [];
 const init = () => {
     headerEle.classList.remove('start-position');
     mainEle.classList.remove('hidden');
+    saveBtnEle.classList.remove('hidden');
     h2Ele.classList.add('hidden');
     getMealData();
     getDrinkData();
@@ -47,7 +48,7 @@ const getDrinkData = () => {
 }
 
 const getMealSearchData = (meal) => {
-    const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`
+    const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`;
 
     fetch(apiUrl)
         .then(response => response.json())
@@ -56,7 +57,7 @@ const getMealSearchData = (meal) => {
 }
 
 const getDrinkSearchData = (drink) => {
-    const apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`
+    const apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`;
 
     fetch(apiUrl)
         .then(response => response.json())

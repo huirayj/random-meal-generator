@@ -125,6 +125,7 @@ const showMealList = () => {
     }
 }
 
+// adds favorited items to an array and localstorage
 const saveHandler = () => {
     let pair = {
         meal: mealTitleEle.childNodes[0].nodeValue,
@@ -161,6 +162,7 @@ window.onload = () => {
 rmgBtnEle.addEventListener('click', init);
 saveBtnEle.addEventListener('click', saveHandler);
 clearBtnEle.addEventListener('click', clearSavedItem);
+// searches favorited items when clicked
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('saved-items')) {
         let mealName = e.target.textContent;

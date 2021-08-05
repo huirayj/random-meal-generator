@@ -10,7 +10,7 @@
     <title>Random Meal Generator</title>
 </head>
 
-<body>
+<body class="container is-desktop">
     <header class='start-position'>
         <!-- displays favorite items -->
         <nav>
@@ -19,37 +19,78 @@
             </ul>
         </nav>
         <h1>Random Meal Generator</h1>
-        <h2>Press the "RMG" button and instantly get a random dish to cook and cocktail to mix! If you like it you can save it.</h2>
+        <h2>Press the "RMG" button and instantly get a random dish to cook and cocktail to mix! If you like it, you can
+            save it.</h2>
         <div class='button-container buttons are-medium'>
-            <button class="button rmg-button is-outlined is-warning is-light">RMG!</button> 
-            <button class="button save-button is-outlined is-danger is-light hidden">Favorite</button>
-            <button class="button clear-button is-info is-light is-outlined hidden">Clear Fav</button>
+            <button class="button rmg-button is-warning is-light">RMG!</button>
+            <button class="button save-button is-danger is-light hidden">Favorite</button>
+            <button class="button clear-button is-info is-light hidden">Clear Fav</button>
         </div>
     </header>
 
     <main class="container hidden">
+        <div class="columns">
+            <section class="column recipe-card meal-container card">
+                <h3 class="meal-name"></h3>
+                <div class="hero-foot">
+                    <nav class="tabs is-boxed is-fullwidth is-medium">
+                        <div class="container">
+                            <ul id="meal-ul">
+                                <li class="meal-tab is-active" onclick="openTab(event,'meal-img')">
+                                    <a>Image</a>
+                                </li>
+                                <li class="meal-tab" onclick="openTab(event,'meal-ingredients')">
+                                    <a>Ingredients</a>
+                                </li>
+                                <li class="meal-tab" onclick="openTab(event,'meal-instructions')">
+                                    <a>Instructions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="">
+                    <a id="meal-img" class="meal-link meal-content-tab" href="" target="_blank">
+                        <img class="meal-img" src="" alt="" />
+                    </a>
+                    <ul id="meal-ingredients" class="meal-ingredients meal-content-tab content-text hidden">
 
-        <section class="is-desktop meal-container">
-            <h3 class="meal-name"></h3>
-            <div class="columns">
-                <a class="column meal-link" href="" target="_blank"><img class="meal-img" src="" alt="" /></a>
-                <ul class="column meal-ingredients">
+                    </ul>
+                    <p id="meal-instructions" class="meal-instructions meal-content-tab content-text hidden"></p>
+                </div>
+            </section>
 
-                </ul>
-                <p class="column meal-instructions"></p>
-            </div>
-        </section>
+            <section class="column recipe-card drink-container card">
+                <h3 class="drink-name"></h3>
+                <div class="hero-foot">
+                    <nav class="tabs is-boxed is-fullwidth is-medium">
+                        <div class="container">
+                            <ul id="drink-ul">
+                                <li class="drink-tab is-active" onclick="openTab(event,'drink-img')">
+                                    <a>Image</a>
+                                </li>
+                                <li class="drink-tab" onclick="openTab(event,'drink-ingredients')">
+                                    <a>Ingredients</a>
+                                </li>
+                                <li class="drink-tab" onclick="openTab(event,'drink-instructions')">
+                                    <a>Instructions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="">
+                    <a id="drink-img" class="drink-link drink-content-tab" href="">
+                        <img class="drink-img" src="" alt="" />
+                    </a>
+                    <ul id="drink-ingredients" class="drink-ingredients drink-content-tab content-text hidden">
 
-        <section class="is-desktop drink-container">
-            <h3 class="drink-name"></h3>
-            <div class="columns">
-                <a class="column drink-link" href=""><img class="drink-img" src="" alt="" /></a>
-                <ul class="column drink-ingredients">
+                    </ul>
+                    <p id="drink-instructions" class="drink-instructions drink-content-tab content-text hidden"></p>
+                </div>
+            </section>
+        </div>
 
-                </ul>
-                <p class="column drink-instructions"></p>
-            </div>
-        </section>
     </main>
 
     <script src="./assets/js/script.js"></script>

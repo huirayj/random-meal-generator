@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -7,6 +9,12 @@ html {
     background-position: center;
     background-repeat: no-repeat, no-repeat;
     background-attachment: fixed;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 header {
@@ -33,119 +41,66 @@ h2 {
     margin-bottom: 8px;
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding: 8px;
 }
 
 h3 {
     text-align: center;
     font-size: 24px;
-    margin-top: 16px;
-    color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-.button-container {
-    display: inline;
-}
-
-.saved-items {
-    border: solid #2EC4B6;
-    display: inline-block;
-    padding: 3px;
-    margin: 1px;
-    background-color: white;
-}
-
-.saved-items:hover {
-    font-size: 1.2em;
-}
-
-.columns {
-    background-color: rgba(203, 243, 240, 0.8);
-    margin: 8px;
-    padding: 16px;
-    min-height: 325px;
-    border: solid #2EC4B6;
-}
-
-.columns:hover {
-    background-color: rgba(203, 243, 240, 0.9);
-}
-
-.hidden {
-    display: none;
-}* {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-html {
-    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/pexels-alleksana-4113891.jpg');
-    background-position: center;
-    background-repeat: no-repeat, no-repeat;
-    background-attachment: fixed;
-}
-
-header {
-    text-align: center;
-    margin: 16px;
-}
-
-header.start-position {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-h1 {
-    font-size: 48px;
-    color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-h2 {
-    font-size: 16px;
     margin-bottom: 8px;
-    color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
 
-h3 {
-    text-align: center;
-    font-size: 24px;
-    margin-top: 16px;
-    color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .button-container {
-    display: inline;
+    display: flex;
+    justify-content: center;
 }
 
-.saved-items {
-    border: solid #2EC4B6;
-    display: inline-block;
-    padding: 3px;
-    margin: 1px;
-    background-color: white;
+.content-text {
+    padding: 8px;
 }
 
-.saved-items:hover {
-    font-size: 1.2em;
+.hidden {
+    display: none;
 }
 
-.columns {
-    background-color: rgba(203, 243, 240, 0.8);
+.recipe-card {
+    background-color: rgba(203, 243, 240, 0.85);
     margin: 8px;
     padding: 16px;
     min-height: 325px;
     border: solid #2EC4B6;
 }
 
-.columns:hover {
-    background-color: rgba(203, 243, 240, 0.9);
+.recipe-card:hover {
+    background-color: rgba(203, 243, 240, 1);
 }
 
-.hidden {
-    display: none;
+.saved-items {
+    border: 1px solid #2EC4B6;
+    background-color: rgba(203, 243, 240, 0.85);
+    display: inline-block;
+    padding: 3px;
+    margin: 1.5px;
 }
+
+.saved-items:hover {
+    border: 2.5px solid #2EC4B6;
+    font-size: 1.15em;
+    background-color: rgba(203, 243, 240, 1);
+}
+
+.tabs li.is-active a {
+    color: #2EC4B6;
+}
+.tabs li a {
+    color: white;
+    background-color: #2EC4B6;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 36px;
+        padding: 8px;
+    }
+  }

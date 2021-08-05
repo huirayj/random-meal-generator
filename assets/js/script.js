@@ -18,13 +18,37 @@ const savUlEle = document.querySelector('.saved-list');
 const saveBtnEle = document.querySelector('.save-button');
 const clearBtnEle = document.querySelector('.clear-button');
 
+const mealContentTabs = document.querySelectorAll('.meal-content-tab');
+const mealTabLinks = document.querySelectorAll('.meal-tab');
+
+const drinkContentTabs = document.querySelectorAll('.drink-content-tab');
+const drinkTabLinks = document.querySelectorAll('.drink-tab');
+
 let mealList = JSON.parse(localStorage.getItem('mealList')) || [];
 
 const init = () => {
+    const contentTabs = [...mealContentTabs, ...drinkContentTabs];
+    const tabLinks = [...mealTabLinks, ...drinkTabLinks];
+
     headerEle.classList.remove('start-position');
     mainEle.classList.remove('hidden');
     saveBtnEle.classList.remove('hidden');
     h2Ele.classList.add('hidden');
+
+    for (const contentTab of contentTabs) {
+        contentTab.classList.add("hidden");
+    }
+
+    for (const tabLink of tabLinks) {
+        tabLink.classList.remove("is-active");
+    }
+
+    mealContentTabs[0].classList.remove("hidden");
+    mealTabLinks[0].classList.add("is-active");
+
+    drinkContentTabs[0].classList.remove("hidden");
+    drinkTabLinks[0].classList.add("is-active");
+
     getMealData();
     getDrinkData();
 }
@@ -69,8 +93,8 @@ const displayMealRecipe = (meal) => {
     let mealIngreds = [];
 
     for (let i = 0; i <= 20; i++) {
-        let ingred = meal[`strIngredient${i}`];
-        let meas = meal[`strMeasure${i}`];
+        const ingred = capitalize(meal[`strIngredient${i}`]);
+        const meas = meal[`strMeasure${i}`] || '';
 
         ingred && mealIngreds.push(`${ingred}: ${meas}`);
     }
@@ -94,8 +118,8 @@ const displayDrinkRecipe = (drink) => {
     let drinkIngreds = [];
 
     for (let i = 0; i <= 15; i++) {
-        let ingred = drink[`strIngredient${i}`];
-        let meas = drink[`strMeasure${i}`];
+        const ingred = capitalize(drink[`strIngredient${i}`]);
+        const meas = drink[`strMeasure${i}`] || 'As much as you like';
 
         ingred && drinkIngreds.push(`${ingred}: ${meas}`);
     }
@@ -118,7 +142,7 @@ const showMealList = () => {
     let str = '';
 
     savUlEle.innerHTML = '';
-    if (mealList.length > 0) {
+    if (mealList.length) {
         mealList.forEach(({ meal, drink }) =>
             str += `<li class='saved-items'>${meal} + ${drink}</li>`);
         savUlEle.innerHTML = str;
@@ -154,6 +178,25 @@ const clearSavedItem = () => {
     mealList = [];
 };
 
+const capitalize = str => str && str[0].toUpperCase() + str.slice(1);
+
+const openTab = (e, tabName) => {
+    const isMealContainer = e.currentTarget.className.includes("meal");
+    const contentTabs = (isMealContainer) ? mealContentTabs : drinkContentTabs;
+    const tabLinks = (isMealContainer) ? mealTabLinks : drinkTabLinks;
+
+    for (const contentTab of contentTabs) {
+        contentTab.classList.add("hidden");
+    }
+
+    for (const tabLink of tabLinks) {
+        tabLink.classList.remove("is-active");
+    }
+
+    document.getElementById(tabName).classList.remove("hidden");
+    e.currentTarget.classList.add("is-active");
+}
+
 window.onload = () => {
     h2Ele.classList.remove('hidden');
     mealList.length && clearBtnEle.classList.remove('hidden');
@@ -166,8 +209,8 @@ clearBtnEle.addEventListener('click', clearSavedItem);
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('saved-items')) {
         let mealName = e.target.textContent;
-        let meal = mealName.split('+')[0].trim();
-        let drink = mealName.split('+')[1].trim();
+        const meal = mealName.split('+')[0].trim();
+        const drink = mealName.split('+')[1].trim();
 
         getMealSearchData(meal);
         getDrinkSearchData(drink);
